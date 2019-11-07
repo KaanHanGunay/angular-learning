@@ -1,2 +1,5 @@
 Yeni bir package eklemek için npm install --save nameOfPackage
 
+Yeni component oluşturmak için;
+ng generate component componentName
+ng g c componentName

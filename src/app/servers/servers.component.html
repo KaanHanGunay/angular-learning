@@ -15,8 +15,7 @@
   <p>No server was created</p>
 </ng-template>
 
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
 <app-success-alert></app-success-alert>
 <app-warning-alert></app-warning-alert>
 <label>User Name

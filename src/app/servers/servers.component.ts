@@ -11,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer = true;
   serverCreationStatus = 'No server was created!';
-  serverName = '';
+  serverName = 'TestServer';
+  userName = '';
+  isClearButtonDisabled = true;
 
   constructor() {
     setTimeout(() => {
@@ -23,12 +25,21 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
-    this.serverCreationStatus = 'Server was created!';
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
   onUpdateServer(event: Event) {
     console.log(event);
     this.serverName = (event.target as HTMLInputElement).value;
+  }
+
+  onClearButtonClick() {
+    this.userName = '';
+    this.isClearButtonDisabled = true;
+  }
+
+  onUpdateUserNameField(event: Event) {
+    this.isClearButtonDisabled = (event.target as HTMLInputElement).value.length === 0;
   }
 }
 

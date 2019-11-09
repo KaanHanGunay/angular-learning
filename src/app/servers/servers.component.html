@@ -8,14 +8,15 @@
 <br/>
 <!--<p [innerText]="serverName"></p>-->
 <button class="btn btn-primary" [disabled]="allowNewServer" (click)="onCreateServer()">Add Server</button>
-<p [innerText]="allowNewServer"></p>
-<p [innerText]="serverCreationStatus"></p>
+<!--<p [innerText]="allowNewServer"></p>-->
+<!--<p [innerText]="serverCreationStatus"></p>-->
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
 <app-server></app-server>
 <app-server></app-server>
 <app-success-alert></app-success-alert>
 <app-warning-alert></app-warning-alert>
 <label>User Name
-  <input type="text" class="form-control" [(ngModel)]="userName" (input)="onUpdateUserNameField($event)">
+  <input type="text" class="form-control" [(ngModel)]="userName">
 </label>
 <p [innerText]="userName"></p>
-<button class="btn btn-default" [disabled]="isClearButtonDisabled" (click)="onClearButtonClick()">Clear</button>
+<button class="btn btn-default" [disabled]="userName === ''" (click)="userName = ''">Clear</button>

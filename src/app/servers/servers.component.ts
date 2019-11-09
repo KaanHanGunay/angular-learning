@@ -13,7 +13,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No server was created!';
   serverName = 'TestServer';
   userName = '';
-  isClearButtonDisabled = true;
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -25,21 +25,13 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
   onUpdateServer(event: Event) {
     console.log(event);
     this.serverName = (event.target as HTMLInputElement).value;
-  }
-
-  onClearButtonClick() {
-    this.userName = '';
-    this.isClearButtonDisabled = true;
-  }
-
-  onUpdateUserNameField(event: Event) {
-    this.isClearButtonDisabled = (event.target as HTMLInputElement).value.length === 0;
   }
 }
 

@@ -3,3 +3,8 @@ Yeni bir package eklemek için npm install --save nameOfPackage
 Yeni component oluşturmak için;
 ng generate component componentName
 ng g c componentName
+
+Component üst componentten veri alacaksa @Input() degisken şeklinde alır.
+Alt component üst componente veri gönderecekse @Output() degisken şeklinde gönderir.
+Alt componentte componentin ismi farklı kullanuılmak istenirse;
+  @Input('UstIsım') KullanılmakIstenenIsim;
